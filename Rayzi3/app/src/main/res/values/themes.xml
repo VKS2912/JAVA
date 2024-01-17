@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Rayzi" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+
+        <item name="android:windowDisablePreview">true</item>
+
+        <item name="colorPrimary">@color/black_back</item>
+        <item name="colorPrimaryVariant">@color/black_back</item>
+        <item name="colorOnPrimary">@color/black_back</item>
+        <item name="colorOnBackground">@color/pinklight</item>
+        <item name="colorSurface">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:forceDarkAllowed">true</item>
+        <item name="android:listPreferredItemPaddingLeft">20dp</item>
+        <item name="android:listPreferredItemPaddingRight">20dp</item>
+
+    </style>
+
+
+    <style name="AppTheme" parent="Theme.Rayzi">
+        <item name="android:windowSplashScreenAnimatedIcon" tools:ignore="NewApi">
+            @android:color/transparent
+        </item>
+        <item name="android:windowSplashScreenAnimationDuration" tools:ignore="NewApi">0</item>
+    </style>
+
+</resources>

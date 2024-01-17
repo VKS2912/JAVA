@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".PlayerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="10dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="songName"
+            android:textAlignment="center"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <ImageView
+            android:id="@+id/imageview"
+            android:layout_width="240dp"
+            android:layout_height="235dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/music2">
+
+        </ImageView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:thumbTint="#00FF00"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp">
+
+            </SeekBar>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/playbutton"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_pause">
+
+            </Button>
+
+            <Button
+                android:id="@+id/nextbutton"
+                android:layout_toRightOf="@+id/playbutton"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/ic_next"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+
+            </Button>
+
+            <Button
+                android:id="@+id/prevbutton"
+                android:layout_toLeftOf="@+id/playbutton"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/ic_previous"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+
+            </Button>
+
+            <Button
+                android:id="@+id/fastforbutton"
+                android:layout_toRightOf="@+id/nextbutton"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/ic_fastforward"
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+
+            </Button>
+
+            <Button
+                android:id="@+id/fastrevbutton"
+                android:layout_toLeftOf="@+id/prevbutton"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/ic_fastrewind"
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+
+            </Button>
+            
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

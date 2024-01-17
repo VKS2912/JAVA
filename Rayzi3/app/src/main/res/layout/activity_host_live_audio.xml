@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.example.rayzi.viewModel.HostLiveViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".liveStreamming.LiveActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/mainImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg4" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_black_trans" />
+
+            <LinearLayout
+                android:id="@+id/lytGift"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/imgGift"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:src="@drawable/ic_gift" />
+
+                <ImageView
+                    android:id="@+id/imgGiftCount"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="-50dp"
+                    android:src="@drawable/x10" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvGiftUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lytGift"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/abold"
+                android:textColor="@color/pink"
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_above="@id/lytBottomBar">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvComments"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="10dp"
+                    android:adapter="@{viewModel.liveStramCommentAdapter}"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:reverseLayout="false"
+                    app:stackFromEnd="true"
+                    tools:listitem="@layout/item_livestream_comment_1" />
+
+            </RelativeLayout>
+
+
+            <!--        <RelativeLayout-->
+            <!--            android:id="@+id/lytBottomBar"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="40dp"-->
+            <!--            android:layout_alignParentBottom="true"-->
+            <!--            android:layout_marginVertical="5dp"-->
+            <!--            android:layout_marginStart="10dp"-->
+            <!--            android:layout_marginBottom="10dp"-->
+            <!--            android:fitsSystemWindows="true"-->
+            <!--            android:gravity="center"-->
+            <!--            android:weightSum="3"-->
+            <!--            android:orientation="horizontal">-->
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/options"-->
+            <!--                android:layout_width="40dp"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:layout_marginEnd="10dp"-->
+            <!--                android:background="@drawable/bg_etblack_a"-->
+            <!--                android:backgroundTint="@color/graylight"-->
+            <!--                android:padding="8dp"-->
+            <!--                android:src="@drawable/application"-->
+            <!--                app:tint="@color/white" />-->
+
+            <!--            <RelativeLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:background="@drawable/bg_etblack_a"-->
+            <!--                android:layout_toStartOf="@+id/btnMute"-->
+            <!--                android:layout_toEndOf="@+id/options"-->
+            <!--                android:backgroundTint="@color/graylight"-->
+            <!--                android:orientation="horizontal">-->
+
+
+            <!--                <EditText-->
+            <!--                    android:id="@+id/etComment"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:background="@android:color/transparent"-->
+            <!--                    android:fontFamily="@font/alight"-->
+            <!--                    android:hint="@string/add_a_comment"-->
+            <!--                    android:paddingHorizontal="10dp"-->
+            <!--                    android:paddingVertical="10dp"-->
+            <!--                    android:singleLine="true"-->
+            <!--                    android:textColor="@color/white"-->
+            <!--                    android:textColorHint="@color/white"-->
+            <!--                    android:textSize="14sp"-->
+            <!--                    android:visibility="visible" />-->
+
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/btnsend"-->
+            <!--                    android:layout_width="30dp"-->
+            <!--                    android:layout_height="30dp"-->
+            <!--                    android:layout_alignParentEnd="true"-->
+            <!--                    android:layout_alignParentRight="true"-->
+            <!--                    android:layout_centerVertical="true"-->
+            <!--                    android:layout_gravity="center_vertical"-->
+            <!--                    android:layout_marginHorizontal="10dp"-->
+            <!--                    android:clickable="true"-->
+            <!--                    android:onClick="onClickSendComment"-->
+            <!--                    android:padding="5dp"-->
+            <!--                    android:src="@drawable/send"-->
+
+            <!--                    app:tint="@color/white" />-->
+
+            <!--            </RelativeLayout>-->
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/btnMute"-->
+            <!--                android:layout_width="40dp"-->
+            <!--                android:layout_height="40dp"-->
+            <!--                android:layout_marginStart="10dp"-->
+            <!--                android:layout_alignParentRight="true"-->
+            <!--                android:layout_marginLeft="10dp"-->
+            <!--                android:onClick="onclickGiftIcon"-->
+            <!--                android:padding="3dp"-->
+            <!--                android:scaleType="centerCrop"-->
+            <!--                android:src="@drawable/unmute" />-->
+
+            <!--        </RelativeLayout>-->
+
+
+            <LinearLayout
+                android:id="@+id/lytBottomBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginBottom="5dp"
+                android:fitsSystemWindows="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_weight="0.2">
+
+                    <ImageView
+                        android:id="@+id/options"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/bg_etblack_a"
+                        android:backgroundTint="@color/graylight"
+                        android:padding="8dp"
+                        android:src="@drawable/application"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/lytbuttons"
+                    android:layout_weight="2.5"
+                    android:background="@drawable/bg_etblack_a"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/etComment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_weight="2.4"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/alight"
+                        android:hint="@string/add_a_comment"
+                        android:paddingVertical="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/btnsend"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="0.5"
+                        android:onClick="onClickSendComment"
+                        android:padding="5dp"
+                        android:src="@drawable/send"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lytbuttons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="0.1"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/btnMute"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:padding="3dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/unmute" />
+
+
+                    <ImageView
+                        android:id="@+id/imggift2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:onClick="onclickGiftIcon"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_gift"
+                        android:visibility="visible" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--        <RelativeLayout-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_below="@id/lytTop">-->
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="30dp"-->
+            <!--                android:orientation="vertical">-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="horizontal"-->
+            <!--                    android:weightSum="5">-->
+
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <RelativeLayout-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="80dp">-->
+
+
+            <!--                            <com.airbnb.lottie.LottieAnimationView-->
+            <!--                                android:id="@+id/animation_view1"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="match_parent"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:visibility="gone"-->
+            <!--                                app:lottie_autoPlay="true"-->
+            <!--                                app:lottie_loop="true"-->
+            <!--                                app:lottie_rawRes="@raw/chat_room_mic_flow" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image0"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image01"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit"-->
+            <!--                                android:visibility="gone" />-->
+
+            <!--                        </RelativeLayout>-->
+
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/nameCount0"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/amidum"-->
+            <!--                            android:text="1"-->
+            <!--                            android:textColor="@color/white"-->
+            <!--                            android:textSize="15sp" />-->
+
+
+            <!--                    </LinearLayout>-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <RelativeLayout-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="80dp">-->
+
+
+            <!--                            <com.airbnb.lottie.LottieAnimationView-->
+            <!--                                android:id="@+id/animation_view2"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="match_parent"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:visibility="gone"-->
+            <!--                                app:lottie_autoPlay="true"-->
+            <!--                                app:lottie_loop="true"-->
+            <!--                                app:lottie_rawRes="@raw/chat_room_mic_flow" />-->
+
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image1"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image11"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit"-->
+            <!--                                android:visibility="gone" />-->
+
+            <!--                        </RelativeLayout>-->
+
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/nameCount1"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/amidum"-->
+            <!--                            android:text="2"-->
+            <!--                            android:textColor="@color/white"-->
+            <!--                            android:textSize="15sp" />-->
+
+            <!--                    </LinearLayout>-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <RelativeLayout-->
+            <!--                            android:id="@+id/plus1"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="80dp">-->
+
+
+            <!--                            <com.airbnb.lottie.LottieAnimationView-->
+            <!--                                android:id="@+id/animation_view3"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="match_parent"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:visibility="gone"-->
+            <!--                                app:lottie_autoPlay="true"-->
+            <!--                                app:lottie_loop="true"-->
+            <!--                                app:lottie_rawRes="@raw/chat_room_mic_flow" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image2"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image21"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit"-->
+            <!--                                android:visibility="gone" />-->
+            <!--                        </RelativeLayout>-->
+
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/nameCount2"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/amidum"-->
+            <!--                            android:text="3"-->
+            <!--                            android:textColor="@color/white"-->
+            <!--                            android:textSize="15sp" />-->
+
+            <!--                    </LinearLayout>-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <RelativeLayout-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="80dp">-->
+
+            <!--                            <com.airbnb.lottie.LottieAnimationView-->
+            <!--                                android:id="@+id/animation_view4"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="match_parent"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:visibility="gone"-->
+            <!--                                app:lottie_autoPlay="true"-->
+            <!--                                app:lottie_loop="true"-->
+            <!--                                app:lottie_rawRes="@raw/chat_room_mic_flow" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image3"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image31"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit"-->
+            <!--                                android:visibility="gone" />-->
+            <!--                        </RelativeLayout>-->
+
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/nameCount3"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/amidum"-->
+            <!--                            android:text="4"-->
+            <!--                            android:textColor="@color/white"-->
+            <!--                            android:textSize="15sp" />-->
+            <!--                    </LinearLayout>-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        android:orientation="vertical">-->
+
+
+            <!--                        <RelativeLayout-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="80dp">-->
+
+            <!--                            <com.airbnb.lottie.LottieAnimationView-->
+            <!--                                android:id="@+id/animation_view5"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="match_parent"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:visibility="gone"-->
+            <!--                                app:lottie_autoPlay="true"-->
+            <!--                                app:lottie_loop="true"-->
+            <!--                                app:lottie_rawRes="@raw/chat_room_mic_flow" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image4"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image41"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit"-->
+            <!--                                android:visibility="gone" />-->
+
+            <!--                        </RelativeLayout>-->
+
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/nameCount4"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/amidum"-->
+            <!--                            android:text="5"-->
+            <!--                            android:textColor="@color/white"-->
+            <!--                            android:textSize="15sp" />-->
+
+            <!--                    </LinearLayout>-->
+
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="30dp"-->
+            <!--                    android:orientation="horizontal"-->
+            <!--                    android:weightSum="5">-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <RelativeLayout-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="80dp">-->
+
+
+            <!--                            <com.airbnb.lottie.LottieAnimationView-->
+            <!--                                android:id="@+id/animation_view6"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="match_parent"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:visibility="gone"-->
+            <!--                                app:lottie_autoPlay="true"-->
+            <!--                                app:lottie_loop="true"-->
+            <!--                                app:lottie_rawRes="@raw/chat_room_mic_flow" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image5"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image51"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit"-->
+            <!--                                android:visibility="gone" />-->
+
+            <!--                        </RelativeLayout>-->
+
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/nameCount5"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/amidum"-->
+            <!--                            android:text="6"-->
+            <!--                            android:textColor="@color/white"-->
+            <!--                            android:textSize="15sp" />-->
+
+            <!--                    </LinearLayout>-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <RelativeLayout-->
+            <!--                            android:id="@+id/plus3"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="80dp">-->
+
+
+            <!--                            <com.airbnb.lottie.LottieAnimationView-->
+            <!--                                android:id="@+id/animation_view7"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="match_parent"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:visibility="gone"-->
+            <!--                                app:lottie_autoPlay="true"-->
+            <!--                                app:lottie_loop="true"-->
+            <!--                                app:lottie_rawRes="@raw/chat_room_mic_flow" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image6"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image61"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit"-->
+            <!--                                android:visibility="gone" />-->
+
+            <!--                        </RelativeLayout>-->
+
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/nameCount6"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/amidum"-->
+            <!--                            android:text="7"-->
+            <!--                            android:textColor="@color/white"-->
+            <!--                            android:textSize="15sp" />-->
+
+            <!--                    </LinearLayout>-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <RelativeLayout-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="80dp">-->
+
+            <!--                            <com.airbnb.lottie.LottieAnimationView-->
+            <!--                                android:id="@+id/animation_view8"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="match_parent"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:visibility="gone"-->
+            <!--                                app:lottie_autoPlay="true"-->
+            <!--                                app:lottie_loop="true"-->
+            <!--                                app:lottie_rawRes="@raw/chat_room_mic_flow" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image7"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image71"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit"-->
+            <!--                                android:visibility="gone" />-->
+
+            <!--                        </RelativeLayout>-->
+
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/nameCount7"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/amidum"-->
+            <!--                            android:text="8"-->
+            <!--                            android:textColor="@color/white"-->
+            <!--                            android:textSize="15sp" />-->
+
+            <!--                    </LinearLayout>-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <RelativeLayout-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="80dp">-->
+
+
+            <!--                            <com.airbnb.lottie.LottieAnimationView-->
+            <!--                                android:id="@+id/animation_view9"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="match_parent"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:visibility="gone"-->
+            <!--                                app:lottie_autoPlay="true"-->
+            <!--                                app:lottie_loop="true"-->
+            <!--                                app:lottie_rawRes="@raw/chat_room_mic_flow" />-->
+
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image8"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit" />-->
+
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image81"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit"-->
+            <!--                                android:visibility="gone" />-->
+
+
+            <!--                        </RelativeLayout>-->
+
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/nameCount8"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/amidum"-->
+            <!--                            android:text="9"-->
+            <!--                            android:textColor="@color/white"-->
+            <!--                            android:textSize="15sp" />-->
+            <!--                    </LinearLayout>-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <RelativeLayout-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="80dp">-->
+
+
+            <!--                            <com.airbnb.lottie.LottieAnimationView-->
+            <!--                                android:id="@+id/animation_view10"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="match_parent"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:visibility="gone"-->
+            <!--                                app:lottie_autoPlay="true"-->
+            <!--                                app:lottie_loop="true"-->
+            <!--                                app:lottie_rawRes="@raw/chat_room_mic_flow" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image9"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit" />-->
+
+            <!--                            <ImageView-->
+            <!--                                android:id="@+id/image91"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="60dp"-->
+            <!--                                android:layout_centerInParent="true"-->
+            <!--                                android:src="@drawable/audio_sit"-->
+            <!--                                android:visibility="gone" />-->
+
+
+            <!--                        </RelativeLayout>-->
+
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/nameCount9"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/amidum"-->
+            <!--                            android:text="10"-->
+            <!--                            android:textColor="@color/white"-->
+            <!--                            android:textSize="15sp" />-->
+
+            <!--                    </LinearLayout>-->
+
+            <!--                </LinearLayout>-->
+
+            <!--            </LinearLayout>-->
+
+            <!--        </RelativeLayout>-->
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSeat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lytTop"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="5"
+                tools:listitem="@layout/item_seat" />
+
+            <LinearLayout
+                android:id="@+id/lytTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvViewUsers"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:adapter="@{viewModel.liveViewAdapter}"
+                            android:fadingEdge="horizontal"
+                            android:fadingEdgeLength="10dp"
+                            android:orientation="horizontal"
+                            android:requiresFadingEdge="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/item_view" />
+
+                        <TextView
+                            android:id="@+id/tvNoOneJoined"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/bg_5dp"
+                            android:backgroundTint="@color/sky"
+                            android:fontFamily="@font/abold"
+                            android:paddingHorizontal="20dp"
+                            android:paddingVertical="5dp"
+                            android:text="No one Joined"
+                            android:textColor="@color/white"
+                            android:visibility="visible" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lytviewcount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_gradient_round_black"
+                        android:backgroundTint="@color/graylight"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:padding="2dp"
+                            android:src="@drawable/ic_eye"
+                            app:tint="@color/white" />
+
+                        <TextView
+                            android:id="@+id/tvViewUserCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:fontFamily="@font/amidum"
+                            android:text="0"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/btnClose"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/bg_gradient_round"
+                        android:backgroundTint="@color/black_alpha_20"
+                        android:src="@drawable/shutdown"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_gradient_round_black_transperent_oneside"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:padding="4dp"
+                                android:src="@drawable/money" />
+
+                            <TextView
+                                android:id="@+id/tvRcoin"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:minWidth="50dp"
+                                android:text="0"
+                                android:textColor="@color/yellow"
+                                android:textSize="14dp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/bg_gradient_round_black_transperent_oneside"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:padding="4dp"
+                                android:src="@drawable/rcoin" />
+
+                            <TextView
+                                android:id="@+id/tvRcoins"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:minWidth="50dp"
+                                android:text=""
+                                android:textColor="@color/yellow"
+                                android:textSize="14dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvUserId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lytTop"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:shadowColor="@color/black_back"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:text="ID: 123123"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <com.example.rayzi.agora.ui.RtcStatsView
+                android:id="@+id/single_host_rtc_stats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@color/white"
+                android:visibility="gone" />
+
+            <include layout="@layout/layout_no_internet" />
+
+            <com.opensource.svgaplayer.SVGAImageView
+                android:id="@+id/svgaImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="0dp"
+                app:autoPlay="false" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

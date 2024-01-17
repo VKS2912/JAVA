@@ -1,0 +1,92 @@
+{
+  "project_info": {
+    "project_number": "309277248121",
+    "project_id": "rayzi-27ce9",
+    "storage_bucket": "rayzi-27ce9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309277248121:android:d8d024983d4f02147022a8",
+        "android_client_info": {
+          "package_name": "com.example.rayzi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309277248121-3jcg94gh6o9ennrqf9la452oikqr84j9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rayzi",
+            "certificate_hash": "a0b06fbf48ed5687971820ab3e0ba9b5585ae4e2"
+          }
+        },
+        {
+          "client_id": "309277248121-bp9ll4b6nsubjpopfolaedsqm3112j6a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rayzi",
+            "certificate_hash": "d4d5174f4ff5ae83c97c0279c797f89a19793bd7"
+          }
+        },
+        {
+          "client_id": "309277248121-m6n32nv26p1kef5lubs0ivs4m0co2fbe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNjO4lvNw4v7-WxmA0vT1ALu1QgP_-Ho8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309277248121-m6n32nv26p1kef5lubs0ivs4m0co2fbe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309277248121:android:0e844edcbaf71a927022a8",
+        "android_client_info": {
+          "package_name": "com.example.rayzi_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309277248121-n7fulec8bjoag35pt0foh6vc8u6h7i60.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rayzi_demo",
+            "certificate_hash": "d4d5174f4ff5ae83c97c0279c797f89a19793bd7"
+          }
+        },
+        {
+          "client_id": "309277248121-m6n32nv26p1kef5lubs0ivs4m0co2fbe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNjO4lvNw4v7-WxmA0vT1ALu1QgP_-Ho8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309277248121-m6n32nv26p1kef5lubs0ivs4m0co2fbe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

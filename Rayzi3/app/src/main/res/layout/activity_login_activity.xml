@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_back"
+        tools:context=".activity.LoginActivityActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/abold"
+                    android:src="@drawable/onlinetv"
+                    android:textColor="@color/pink"
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:id="@+id/tvfind"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/abold"
+                    android:src="@drawable/findmatch"
+                    android:textColor="@color/pink"
+                    android:textSize="30dp" />
+
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="320dp"
+                    android:layout_height="320dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="30dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bglogin" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:onClick="onClickQuick"
+                        android:src="@drawable/btnquick" />
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginVertical="5dp"
+                        android:onClick="onClickGoogle"
+                        android:src="@drawable/btngoggle" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="25dp"
+                        android:alpha=".7"
+                        android:fontFamily="@font/alight"
+                        android:text="@string/policy"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:onClick="onClickPrivacy"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:alpha=".7"
+                            android:fontFamily="@font/amidum"
+                            android:text="Terms &amp; Condition"
+                            android:textAlignment="center"
+                            android:textColor="@color/pink"
+                            android:textSize="12dp" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:alpha=".7"
+                            android:fontFamily="@font/amidum"
+                            android:text=" &amp; "
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:alpha=".7"
+                            android:fontFamily="@font/amidum"
+                            android:text="Privacy Policy"
+                            android:textAlignment="center"
+                            android:textColor="@color/pink"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="135dp"
+                android:layout_marginHorizontal="150dp"
+                android:layout_marginVertical="90dp"
+                android:src="@drawable/arrow" />
+
+        </RelativeLayout>
+
+
+        <include layout="@layout/layout_no_internet" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_20dp"
+            android:backgroundTint="@color/sky"
+            android:gravity="center_vertical"
+            android:onClick="onClickFacebook"
+            android:orientation="horizontal"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="13dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="start"
+                android:src="@drawable/facebook"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/amidum"
+                android:gravity="center"
+                android:text="Log in with Facebook"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
